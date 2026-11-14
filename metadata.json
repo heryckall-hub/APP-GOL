@@ -1,0 +1,6 @@
+{
+  "name": "AutoCore Cockpit Studio",
+  "description": "Simulador de Cockpit Digital Automotivo e arquitetura completa em Kotlin, Jetpack Compose, Material 3, Coroutines e StateFlow para Android Head Units (minSdk 24).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

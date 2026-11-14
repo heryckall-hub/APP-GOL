@@ -1,0 +1,156 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: 'Rajdhani', sans-serif;
+  --font-sans: 'Rajdhani', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-cyber-black: #09090B;
+  --color-cyber-surface: #141417;
+  --color-cyber-border: #2A2A2E;
+  --color-cyber-text: #FFFFFF;
+  --color-cyber-muted: #8E8E93;
+  --color-cyber-accent: #00B4D8;
+  --color-cyber-hawaii-light: #00E5FF;
+  --color-cyber-hawaii-deep: #0077B6;
+  --color-cyber-street: #1C1C21;
+  --color-cyber-block: #0D0D10;
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #09090B;
+    color: #FFFFFF;
+    font-family: 'Rajdhani', sans-serif;
+    border-radius: 0px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+/* Fonts */
+.font-rajdhani {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.font-jetbrains {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* 45-degree chamfered corner geometry with crisp 1px outer border */
+.cyber-chamfer-frame {
+  clip-path: polygon(
+    12px 0%,
+    100% 0%,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    0% 100%,
+    0% 12px
+  );
+  background-color: #2A2A2E;
+  padding: 1px;
+}
+
+.cyber-chamfer-frame-accent {
+  clip-path: polygon(
+    12px 0%,
+    100% 0%,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    0% 100%,
+    0% 12px
+  );
+  background: linear-gradient(135deg, #00E5FF 0%, #00B4D8 50%, #0077B6 100%);
+  padding: 1px;
+}
+
+.cyber-hawaii-gradient {
+  background: linear-gradient(135deg, #00E5FF 0%, #00B4D8 50%, #0077B6 100%);
+}
+
+.cyber-hawaii-bar {
+  background: linear-gradient(90deg, #0077B6 0%, #00B4D8 55%, #00E5FF 100%);
+}
+
+.cyber-hawaii-text {
+  background: linear-gradient(90deg, #00E5FF 0%, #00B4D8 55%, #38BDF8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.cyber-chamfer-inner {
+  clip-path: polygon(
+    11px 0%,
+    100% 0%,
+    100% calc(100% - 11px),
+    calc(100% - 11px) 100%,
+    0% 100%,
+    0% 11px
+  );
+}
+
+.cyber-chamfer-sm {
+  clip-path: polygon(
+    7px 0%,
+    100% 0%,
+    100% calc(100% - 7px),
+    calc(100% - 7px) 100%,
+    0% 100%,
+    0% 7px
+  );
+}
+
+.cyber-chamfer-btn {
+  clip-path: polygon(
+    8px 0%,
+    100% 0%,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    0% 100%,
+    0% 8px
+  );
+}
+
+/* Surface helpers: glass over 2D map, solid over active WebGL 3D */
+.cyber-surface-glass {
+  background-color: rgba(20, 20, 23, 0.84);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.cyber-surface-solid {
+  background-color: rgba(20, 20, 23, 0.94);
+}
+
+/* Custom ultra-thin angular scrollbar inside modals */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #09090B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2A2E;
+  border-radius: 0px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #00E5FF 0%, #0077B6 100%);
+}
